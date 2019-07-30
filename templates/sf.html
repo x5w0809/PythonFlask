@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Second Floor Store</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='sfcss.css') }}"/>
+    <script src="static/jquery-3.4.1.min.js">
+
+    </script>
+    <script>
+    $(document).ready(function() {
+
+        $("h1").click(function(){
+            $("a").toggleClass("sfc");
+        });
+    });
+    </script>
+
+</head>
+<body>
+<h1>test</h1>
+<a class="sfc">
+    取名為「貳樓」是因為大樓林立的都市裡二樓不會是個商辦空間， 也不會是個營業場所。
+    <br>
+    二樓是一間間我們在精神上依靠的住家， 同時一份份的溫暖也從二樓開始發生。
+    <br>
+    貳樓就想帶給顧客最純粹的『家的感覺』， 裡面有我們希望營造的溫暖自在氛圍以及用心、創意的新美式料理。
+</a>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %} Login {% endblock title %}
+{% block content %}
+<body style="background-image: url( 'https://www.secondfloorcafe.com/images/backgrounds/06.jpg' );background-size: Cover;">
+
+<div class="container" style=" background-color:rgba(255,255,255,0.5);width: 300px;height: 400px;">
+    <h1 style='text-align:center'>Login</h1>
+    {{ wtf.quick_form(formdetail) }}
+</div>
+
+<div style="text-align:center">
+<Button type="button"  onclick="location.href='/' " style="position: fixed;top: 300px;left: 720px;width: 100px;height: 40px;" >Home</Button>
+</div>
+</body>
+{% endblock content%}

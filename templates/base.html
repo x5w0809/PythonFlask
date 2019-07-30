@@ -1,0 +1,139 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}Home Page{% endblock title %}
+
+
+{% block navbar %}
+<nav class="flex-nav " style="background-color:#444444;height:100px;">
+  <div class="container-fluid" >
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <!-- 透過url_for設定HOME連結綁定index -->
+      <a class="navbar-brand" href="{{ url_for('index')}}"><img src="https://www.secondfloorcafe.com/images/logo_new.png"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+      <ul class="nav navbar-nav">
+        <!-- 透過url_for設定USERINFO連結綁定userinfo -->
+
+        <li><a href="{{ url_for('about') }}" style="height:100px;padding:50px;font-family:Monospace;font-size: 20px;color:black">ABOUT US</a></li>
+        <!-- 透過url_for設定LOGOUT連結綁定LOGOUT -->
+
+        <li><a href="{{ url_for('logout') }}" style="height:100px;padding:50px;font-family:Monospace;font-size: 20px;color:black">LOGOUT</a></li>
+        <!-- 透過url_for設定LOGIN連結綁定LOGIN -->
+
+        <li><a href="{{ url_for('login') }}" style="height:100px;padding:50px;font-family:Monospace;font-size: 20px;color:black">LOGIN</a></li>
+
+        <li><a href="{{ url_for('register') }}" style="height:100px;padding:50px;font-family:Monospace;font-size: 20px;color:black">REGISTER</a></li>
+
+        <li><a href="{{ url_for('store') }}" style="height:100px;padding:50px;font-family:Monospace;font-size: 20px;color:black">STORE</a></li>
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height:100px;padding:50px;font-family:Monospace;font-size: 20px;color:black">
+          COMMUNITY
+          </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: gray;border: 1px solid black;">
+          <a class="dropdown-item" href="{{ url_for('about') }}" style="font-family:Serif;font-size: 16px;color:white" >SecondFloorCafe</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://www.thaihand.tw/" style="font-family:Serif;font-size: 16px;color:white">ThaiHand</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://www.baoguotea.com/" style="font-family:Serif;font-size: 16px;color:white">BaoGuo</a>
+        </div>
+      </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0" style="height:100px;padding:20px;">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+          <button class="btn btn-outline-success my-2 my-sm-0;button-align: right" type="submit" style="width:80px;height:40px">Search</button>
+      </form>
+
+    </div>
+  </div>
+</nav>
+{% endblock navbar %}
+
+
+
+
+
+
+{% block content %}
+<body style="background-color:#444444">
+
+
+  <div class="container-fluid" >
+      {% for message in get_flashed_messages()%}
+          <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{ message }}</strong>
+          </div>
+      {% endfor %}
+  </div>
+
+
+
+    <div id="myCarousel" class="carousel slide"style="margin:0;padding:0;">
+    <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+    <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src = "https://www.secondfloorcafe.com/images/backgrounds/01.jpg" alt="First slide" width=100%; height=100% >
+            </div>
+            <div class="item">
+                <img src = "https://www.secondfloorcafe.com/images/backgrounds/02.jpg" alt="Second slide" width=100%; height=100% >
+            </div>
+            <div class="item">
+                <img src ="https://www.secondfloorcafe.com/images/backgrounds/03.jpg" alt="Third slide" width=100%; height=100% >
+            </div>
+        </div>
+    <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel"
+                data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="carousel-control right" href="#myCarousel"
+                data-slide="next"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+
+
+
+    <div  style="background-image: url( 'static/member.png' );background-size:contain;height:630px;background-color:white" >
+    </div>
+
+
+
+
+    <div style="text-align:center;height:250px">
+        <br>
+        <p style="color:white;font-size:24px;">Contact us</p>
+        <br>
+        <li style="color:white;font-size:16px">
+            客服專線0800-222-238(非訂位專線)
+        </li>
+            <br>
+        <li style="color:white;font-size:16px">
+            服務時間Mon-Fri 10:00 - 19:00
+
+        </li>
+
+
+    </div>
+
+
+
+
+
+</body>
+{% endblock content %}
+
+

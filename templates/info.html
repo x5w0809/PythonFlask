@@ -1,0 +1,59 @@
+{% extends 'bootstrap/base.html' %}
+<meta charset="utf-8">
+<script type="text/javascript" src="../js/plugin/jquery.alerts.js"></script>
+{% block title %} About SecondFloorCafe {% endblock title %}
+
+{% block content %}
+<style>
+div {
+    position: relative;
+    top: 70px;
+    left: 50px;
+    padding:20px;
+    font-size: 3px;
+    font-style:italic;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    background-color:rgba(255,255,255,0.5);
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 2s, transform 2s;
+}
+
+div:hover {
+    width: 500px;
+    height: 500px;
+    font-size: 20px;
+    background-color:rgba(255,255,255,0.7);
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+
+}
+</style>
+
+
+<body style="background-image: url( 'https://www.secondfloorcafe.com/images/backgrounds/08.jpg' );background-size: Cover;">
+
+
+
+
+        <div >
+                隱密的巷弄間靜靜地倚著大樹的獨棟建築，這是我們的起點。
+                <br>
+                <br>
+                取名為「貳樓」是因為大樓林立的都市裡二樓不會是個商辦空間， 也不會是個營業場所。
+                <br>
+                <br>
+                二樓是一間間我們在精神上依靠的住家， 同時一份份的溫暖也從二樓開始發生。
+                <br>
+                <br>
+                貳樓就想帶給顧客最純粹的『家的感覺』， 裡面有我們希望營造的溫暖自在氛圍以及用心、創意的新美式料理。
+                <br>
+                <br>
+                在這裡，用料理分享愛、用愛創造人情味。
+
+        </div>
+        <Button type="button"  onclick="location.href='/'" style="position: fixed;top: 10px;left: 50px;width: 100px;height: 40px;" >Home</Button>
+
+</body>
+{% endblock content%}
